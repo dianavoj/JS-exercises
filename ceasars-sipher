@@ -1,0 +1,33 @@
+function rot13(str) {
+  let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+
+  let newStr = ''; 
+  
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ' ' | str[i] === '.' | str[i] === ',' | str[i] === '!' | str[i] === '?') {
+        newStr = newStr + str[i]
+      } 
+
+
+    for (let j = 0; j < alphabet.length; j++) {
+      if (str[i] === alphabet[j]) {
+
+
+        let letter = str[i]
+        if (j <= 12) {
+          letter = alphabet[(Number(j)+13)]
+          //console.log(letter)
+        } if (j>=13) {
+          letter = alphabet[(Number(j)-13)]
+          //console.log(letter)
+        }
+        newStr = newStr + letter
+      }
+    }
+  }
+  return newStr
+}
+
+
+rot13("SERR PBQR PNZC");
