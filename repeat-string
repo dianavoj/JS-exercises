@@ -1,0 +1,20 @@
+function repeatStringNumTimes(str, num) {
+  const count = num;
+  let string = '';
+
+
+  if (num <= 0) {
+    return '';
+  } else {
+    let i =1;
+    while (i<=count) {
+      string = string.concat(str);
+      i++;
+    }
+    return string
+  }
+  
+}
+
+
+repeatStringNumTimes("abc", 3);
