@@ -1,0 +1,18 @@
+function bouncer(arr) {
+  const newArr = [...arr]; //creating a copy of the original array
+  
+  let i =0;
+  while (i<newArr.length) {
+    if (newArr[i] === false || newArr[i] === null || newArr[i] === 0 || newArr[i] === undefined|| Number.isNaN(newArr[i]) ||newArr[i] === '') {
+      newArr.splice(i,1);
+    } else {
+      i++;
+    }
+//if loop only increments i value if something was removed. This is needed because the indexes shift everytime the element is removed. 
+  }
+  console.log(newArr)
+  return newArr
+}
+
+
+bouncer([7, "ate", "", false, 9]);
