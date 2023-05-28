@@ -1,0 +1,68 @@
+function telephoneCheck(str) {
+  let numLen = str.length;
+  console.log(str)
+
+  for (let i =0; i<str.length; i++) {
+    if (str[0] === '(' && str[4] != ')') {
+      return false
+    } if (count >= 12 && str[0] != 1) {
+      return false
+    } if (str[0] === '-') {
+      return false
+    }
+  }
+ 
+  //no other character
+  for (let i =0; i<str.length; i++) {
+    if (str[i] === '!' | str[i] === '?' | str[i] === '*' |  str[i] === '$' | str[i] === '/[a-zA-Z]/') {
+      return false
+    }
+  } 
+
+  //check number of digits
+  let arrOfNum = str.split(/\s|\-|\(|\)/)
+  //console.log(arrOfNum)
+  let joinedStringOfNums = arrOfNum.join('')
+  console.log(joinedStringOfNums)
+
+  let count = 0;
+  for (let i = 0; i < joinedStringOfNums.length; i++) {
+    if (!isNaN(joinedStringOfNums)) {
+    count += 1;
+    }
+  }
+  console.log(count)
+
+  if (count < 10| count >= 12) {
+    return false
+  } 
+  //check it starts with 1 if 11 digits
+  if (count === 11 && joinedStringOfNums[0] != 1) {
+    return false
+  }
+
+  //check that all brackets are closed
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '(' && str[i+4] != ')') {
+      return false
+    } if (str[i] === ')' && str[i-4] != '(') {
+      return false
+    }
+  }
+
+  //check number of dashes
+  let dashCount = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '-') {
+      dashCount += 1;
+      if (dashCount >= 3) {
+        return false
+      }
+    }
+  }
+
+  //return true if nothing applies
+  
+    return true 
+}
+telephoneCheck("555-555-5555");
