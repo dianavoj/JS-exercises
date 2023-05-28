@@ -1,0 +1,11 @@
+function frankenSplice(arr1, arr2, n) {
+  const newArr = [...arr2]; //creates a copy of arr2 to keep it original, without [...] the changes made to newArr will affect arr2
+  let array1 = arr1;
+  //console.log(arr2)
+  newArr.splice(n, 0, ...array1); //adds unpacked array1(...arr1) at position n, without removing nothing (0)
+  //console.log(newArr)
+  return newArr
+}
+
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
