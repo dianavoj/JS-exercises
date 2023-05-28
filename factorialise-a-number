@@ -1,0 +1,17 @@
+function factorialize(num) {
+  let i = 1;
+  let num2 = num;
+  if (num ===0 ) {
+    return 1
+  } else {
+    while (i < num) {
+      if (i < num) {
+      num2 = num2 * (num-i);
+      } 
+
+
+    i++;
+  }
+  return num2;
+  }
+}
