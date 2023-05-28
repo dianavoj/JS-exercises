@@ -1,0 +1,28 @@
+function booWho(bool) {
+  if ( bool === true | bool === false) {
+    return true;
+  } else {
+    return false
+  }
+}
+
+
+booWho(null);
+Title case a sentence
+function titleCase(str) {
+  //splitting the string into an array with each word separated
+  const sepString = str.split(' ');
+
+
+  for (let i=0; i<sepString.length; i++) {
+    sepString[i] = sepString[i].charAt(0).toUpperCase() + sepString[i].slice(1).toLowerCase()
+    //console.log(sepString[i])
+  }
+  let newString = sepString.join(' ');
+  console.log(newString)
+  return newString
+}
+
+
+titleCase("I'm a little tea pot");
+Explanation of line inside the food loop
