@@ -1,0 +1,74 @@
+function largestOfFour(arr) {
+  let array = [];
+
+
+  const [a,b,c,d] = arr;
+
+
+  let bigNumber1 = -1e10;
+  let bigNumber2 = -1e10;
+  let bigNumber3 = -1e10;
+  let bigNumber4 = -1e10;
+
+
+  for (let i = 0; i < a.length; i++) {
+    const subarray = a.sort((a,b) => a-b);
+    console.log(subarray)
+    let currentNumber = a[i];
+    if (a[i] > a[i-1]) {
+      if (currentNumber > bigNumber1) {
+        bigNumber1 = currentNumber;
+      }
+    } 
+  }
+  console.log(bigNumber1)
+
+
+  for (let i = 0; i < b.length; i++) {
+    const subarray = b.sort((a,b) => a-b);
+    console.log(subarray)
+    let currentNumber = b[i];
+    if (b[i] > b[i-1]) {
+      if (currentNumber > bigNumber2) {
+        bigNumber2 = currentNumber;
+      }
+    } 
+  }
+  console.log(bigNumber2)
+
+
+    for (let i = 0; i < c.length; i++) {
+    const subarray = c.sort((a,b) => a-b);
+    console.log(subarray)
+    let currentNumber = c[i];
+    if (c[i] > c[i-1]) {
+      if (currentNumber > bigNumber3) {
+        bigNumber3 = currentNumber;
+      }
+    } 
+  }
+  console.log(bigNumber3)
+
+
+    for (let i = 0; i < d.length; i++) {
+    const subarray = d.sort((a,b) => a-b);
+    console.log(subarray)
+    let currentNumber = d[i];
+    if (d[i] > d[i-1]) {
+      if (currentNumber > bigNumber4) {
+        bigNumber4 = currentNumber;
+      }
+    } 
+  }
+  console.log(bigNumber4)
+
+
+  array.push(bigNumber1,bigNumber2,bigNumber3,bigNumber4)
+  console.log(array)
+  return array
+
+
+}
+
+
+largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
