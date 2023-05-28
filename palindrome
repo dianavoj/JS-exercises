@@ -1,0 +1,20 @@
+function palindrome(str) {
+  let newStr = str.toLowerCase().trim().replace((/[\W_]/g), '')
+  console.log(newStr)
+  
+  let stringToArray = newStr.split('')
+  console.log(stringToArray)
+
+
+  let reversedString =
+[...stringToArray].reverse();
+  console.log(reversedString)
+
+
+return JSON.stringify(stringToArray) ===JSON.stringify(reversedString)
+
+
+}
+
+
+palindrome("eye");
