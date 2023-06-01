@@ -1,0 +1,19 @@
+function sumAll(arr) {
+  let a = arr[0];
+  let b = arr[1];
+  console.log(b)
+  let sumNum = 0;
+  if (a < b) {
+    for ( let i = a; a <= b; a++) {
+      sumNum = sumNum + a;
+    } 
+    return sumNum      
+  } if (a > b) {
+    for (let x = b; b <= a; b++) {
+      sumNum = sumNum + b
+      console.log(b)
+    } return sumNum
+  }
+}
+
+sumAll([1, 4]);
